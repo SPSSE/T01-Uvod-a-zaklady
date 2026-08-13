@@ -5,5 +5,4 @@ def pozdrav(jmeno):
     Příklad:
         pozdrav("Petra") -> "Ahoj, Petra!"
     """
-    # TODO: doplň řešení
-    raise NotImplementedError
+    return f"Ahoj, {jmeno}!"

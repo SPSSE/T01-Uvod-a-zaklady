@@ -6,5 +6,4 @@ def preved_na_text(cislo):
         preved_na_text(5) -> "Hodnota je 5"
         preved_na_text(3.14) -> "Hodnota je 3.14"
     """
-    # TODO: doplň řešení
-    raise NotImplementedError
+    return f"Hodnota je {cislo}"

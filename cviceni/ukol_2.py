@@ -6,5 +6,4 @@ def secti(a, b):
         secti(2, 3) -> 5
         secti(2.5, 1.5) -> 4.0
     """
-    # TODO: doplň řešení
-    raise NotImplementedError
+    return a + b
