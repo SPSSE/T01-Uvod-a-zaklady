@@ -72,10 +72,13 @@ Doplň funkce v souborech ve složce `cviceni/`:
 
 - **`ukol_1.py` - `pozdrav(jmeno)`**: Vrať pozdrav ve tvaru `"Ahoj, <jmeno>!"`.
   - Příklad: `pozdrav("Petra")` -> `"Ahoj, Petra!"`
+  - Pokud `jmeno` není `str`, vyhoď `TypeError` s výstižnou zprávou.
 - **`ukol_2.py` - `secti(a, b)`**: Vrať součet dvou čísel `a` a `b`.
   - Příklad: `secti(2, 3)` -> `5`
+  - Pokud `a` nebo `b` není `int`/`float`, vyhoď `TypeError` s výstižnou zprávou.
 - **`ukol_3.py` - `preved_na_text(cislo)`**: Vrať řetězec ve tvaru `"Hodnota je <cislo>"` pomocí f-stringu.
   - Příklad: `preved_na_text(5)` -> `"Hodnota je 5"`
+  - Pokud `cislo` není `int`/`float`, vyhoď `TypeError` s výstižnou zprávou.
 
 ## Jak si to sám zkontrolovat
 ```bash
@@ -83,6 +86,13 @@ pip install -r requirements.txt
 pytest cviceni -v
 ```
 Po nahrání na GitHub navíc automaticky poběží testy přes GitHub Actions – uvidíš zelenou/červenou fajfku u commitu.
+
+## Hodnocení
+
+Po nahrání do GitHub Classroom se úkoly hodnotí automaticky:
+
+- **Základní testy** (`test_ukol_1.py`, `test_ukol_2.py`, `test_ukol_3.py`) se spouští ihned po každém pushi a výsledek uvidíš během pár minut přímo u commitu / v záložce Actions.
+- Na **jedničku** je navíc potřeba projít přísnějšími **stress testy** – ty pomocí knihovny [Hypothesis](https://hypothesis.readthedocs.io/) generují tisíce náhodných a hraničních vstupů (včetně neplatných typů) a ověřují, že funkce fungují správně ve všech případech, ne jen na pár ukázkových vstupech. Tyto testy se zpřístupní až poté, co vyučující zveřejní oficiální řešení (branch `reseni`) – do té doby nejsou součástí hodnocení.
 
 ## Odevzdání
 Vyplň soubory v `cviceni/`, commitni a pushni do svého repozitáře do stanoveného termínu. Řešení (branch `reseni`) zveřejní vyučující až po deadline.
