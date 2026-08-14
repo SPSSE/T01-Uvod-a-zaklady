@@ -5,5 +5,7 @@ def preved_na_text(cislo):
     Příklad:
         preved_na_text(5) -> "Hodnota je 5"
         preved_na_text(3.14) -> "Hodnota je 3.14"
+
+    Pokud cislo není int/float, vyhoď TypeError s výstižnou zprávou.
     """
     return f"Hodnota je {cislo}"

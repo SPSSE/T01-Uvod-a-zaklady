@@ -1,3 +1,5 @@
+import pytest
+
 from ukol_3 import preved_na_text
 
 
@@ -11,3 +13,13 @@ def test_preved_na_text_desetinne_cislo():
 
 def test_preved_na_text_nula():
     assert preved_na_text(0) == "Hodnota je 0"
+
+
+def test_preved_na_text_neplatny_typ_str():
+    with pytest.raises(TypeError):
+        preved_na_text("5")
+
+
+def test_preved_na_text_neplatny_typ_none():
+    with pytest.raises(TypeError):
+        preved_na_text(None)
