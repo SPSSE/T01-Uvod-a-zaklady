@@ -8,4 +8,6 @@ def secti(a, b):
 
     Pokud a nebo b není int/float, vyhoď TypeError s výstižnou zprávou.
     """
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("a i b musí být int nebo float")
     return a + b

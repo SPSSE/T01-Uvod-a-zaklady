@@ -49,11 +49,41 @@ jobs:
           timeout: 10
           max-score: 10
 
+      - name: Úkol 1 - stress test (10000 náhodných vstupů)
+        id: ukol-1-stress
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: 'Úkol 1 - stress test (10000 náhodných vstupů)'
+          command: pytest cviceni/test_ukol_1_stress.py -q
+          timeout: 10
+          max-score: 15
+
+      - name: Úkol 2 - stress test (10000 náhodných vstupů)
+        id: ukol-2-stress
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: 'Úkol 2 - stress test (10000 náhodných vstupů)'
+          command: pytest cviceni/test_ukol_2_stress.py -q
+          timeout: 10
+          max-score: 15
+
+      - name: Úkol 3 - stress test (10000 náhodných vstupů)
+        id: ukol-3-stress
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: 'Úkol 3 - stress test (10000 náhodných vstupů)'
+          command: pytest cviceni/test_ukol_3_stress.py -q
+          timeout: 10
+          max-score: 15
+
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
           UKOL-1-ZAKLAD_RESULTS: "${{steps.ukol-1-zaklad.outputs.result}}"
           UKOL-2-ZAKLAD_RESULTS: "${{steps.ukol-2-zaklad.outputs.result}}"
           UKOL-3-ZAKLAD_RESULTS: "${{steps.ukol-3-zaklad.outputs.result}}"
+          UKOL-1-STRESS_RESULTS: "${{steps.ukol-1-stress.outputs.result}}"
+          UKOL-2-STRESS_RESULTS: "${{steps.ukol-2-stress.outputs.result}}"
+          UKOL-3-STRESS_RESULTS: "${{steps.ukol-3-stress.outputs.result}}"
         with:
-          runners: ukol-1-zaklad,ukol-2-zaklad,ukol-3-zaklad
+          runners: ukol-1-zaklad,ukol-2-zaklad,ukol-3-zaklad,ukol-1-stress,ukol-2-stress,ukol-3-stress

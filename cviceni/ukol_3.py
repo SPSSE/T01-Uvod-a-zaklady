@@ -8,4 +8,6 @@ def preved_na_text(cislo):
 
     Pokud cislo není int/float, vyhoď TypeError s výstižnou zprávou.
     """
+    if not isinstance(cislo, (int, float)):
+        raise TypeError("cislo musí být int nebo float")
     return f"Hodnota je {cislo}"
